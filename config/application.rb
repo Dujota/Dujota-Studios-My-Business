@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
@@ -31,5 +31,26 @@ module DujotaStudios
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Require belongs_to by default
+    config.active_record.belongs_to_required_by_default = true
+
+    # Configure sensitive parameters which will be filtered from the log file.
+    config.filter_parameters += [:password]
+
+    # Enable escaping HTML in JSON.
+    config.active_support.escape_html_entities_in_json = true
+
+    # Use SQL instead of Active Record's schema dumper when creating the database.
+    # This is necessary if your schema can't be completely dumped by the schema dumper,
+    # like if you have constraints or database-specific column types
+    config.active_record.schema_format = :sql
+
+    # For Heroku
+    config.assets.initialize_on_precompile = false
+
+    # Time zone
+    config.time_zone = "Eastern Time (US & Canada)"
+    config.active_record.default_timezone = :local
   end
 end
