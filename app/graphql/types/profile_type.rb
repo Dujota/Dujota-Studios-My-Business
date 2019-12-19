@@ -8,7 +8,7 @@ module Types
 
     def full_name
       # object references the user instance, compact removes any nil values
-      [object.first_name, object.last_name].compact.join("")
+      [object.first_name, object.last_name].compact.join(" ")
     end
   end
 end
