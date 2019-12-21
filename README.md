@@ -1,24 +1,12 @@
-# README
+# Dujota Studios
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+From a humble thought to a burning curiousity has brought us here to push the boundaries of technology and self improvement.
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.6.5
+* Rails 6.0.1
+* Webpack 4
+* GraphQL
+* PostgresQL
+* React
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
