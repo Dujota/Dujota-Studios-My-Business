@@ -90,3 +90,21 @@ const createErrorLink = () =>
       logError('GraphQL - networkError', networkError);
     }
   });
+
+// Tell Apollo client about the endpoint for making queries: (HTTP LINK) - this was default endpoint added by graphql install
+
+const createHttpLink = () =>
+  new HttpLink({
+    uri: '/graphql',
+    credentials: 'include',
+  });
+
+// Initialize the Apollo Client function that packages the instance together
+
+// passed in are the links which basically run as  a middleware through all the apollo client requests
+
+export const createClient = (cache, requestLink) =>
+  new ApolloClient({
+    link: ApolloLink.from([createErrorLink(), createLinkWithToken(), createHttpLink()]),
+    cache,
+  });
