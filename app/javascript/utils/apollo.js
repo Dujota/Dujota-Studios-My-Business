@@ -1,3 +1,15 @@
+/**
+ * @Details_of_packages_below
+ * We use graphql-tag to build our first queries.
+  apollo-client is a generic framework-agnostic package for performing and caching GraphQL requests.
+  apollo-cache-inmemory is a storage implementation for Apollo cache.
+  react-apollo contains a set of React components for displaying data.
+  apollo-link and other links implement a middleware pattern for apollo-client operations ( can find further details
+     https://www.apollographql.com/docs/link/overview.html ).
+  Now we need to create an entry point for our front-end application. Remove hello_react.jsx from the packs folder and add index.js:
+
+ */
+
 // In this file we want to configure the two core entities of the Apollo application, the client and the cache (or more precisely, the functions to create both):
 
 // Client
@@ -59,3 +71,22 @@ const createLinkWithToken = () =>
         };
       })
   );
+
+// LOG ERRORS
+const logError = error => console.error(error);
+
+// Create Error Link
+const createErrorLink = () =>
+  onError(({ graphQLErrors, networkError, operation: { operationName, variables } }) => {
+    if (graphQLErrors) {
+      logError('GraphQL - Error', {
+        errors: graphQLErrors,
+        operationName,
+        variables,
+      });
+    }
+
+    if (networkError) {
+      logError('GraphQL - networkError', networkError);
+    }
+  });
