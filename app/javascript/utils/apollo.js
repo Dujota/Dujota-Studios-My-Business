@@ -15,7 +15,7 @@ export const createCache = () => {
   const cache = new InMemoryCache();
 
   if (process.env.NODE_ENV === 'development') {
-    window.secretVariableToStoreCache = cache;
+    window.apolloCacheDevelopmentOnly = cache;
   }
 
   return cache;
