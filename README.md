@@ -7,6 +7,7 @@ From a humble thought to a burning curiousity has brought us here to push the bo
 * Rails 6.0.1
 * Webpack 4
 * GraphQL
+* Apollo Client
 * PostgresQL
 * React
 
