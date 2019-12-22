@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+
 import { ApolloProvider } from 'react-apollo';
 
 // Apollo Client configuration + Instance  with middleware
