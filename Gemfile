@@ -50,3 +50,4 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem "graphql", "~> 1.9"
 
 gem 'graphiql-rails', group: :development
+gem "rspec-rails", "= 3.9.0", :groups => [:development, :test]
