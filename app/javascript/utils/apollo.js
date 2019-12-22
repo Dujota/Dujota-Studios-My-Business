@@ -36,9 +36,8 @@ export const createCache = () => {
 
 // Get Token from Meta Tags on Application.html.erb
 
-const getToken = () => {
-  document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-};
+const getToken = () => document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
 const token = getToken();
 
 // MiddleWare Operationt that sets the CSRF token on requests to protect from forgery
