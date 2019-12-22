@@ -26,7 +26,7 @@ export default () => (
               <div key={id}>
                 {/* INDIVIDUAL BLOG POST BODY */}
                 <h4>{title}</h4>
-                {user && <p> `added by ${user.fullName}`</p>}
+                {user && <p> {`added by ${user.profile.fullName}`}</p>}
                 <p>{body}</p>
               </div>
             ))}
