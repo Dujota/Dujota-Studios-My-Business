@@ -17,14 +17,14 @@ RSpec.describe Types::QueryType do
       })
     end
 
-    # Explicitly set the subject to our App's GraphQL Schema and excute it as json (exactly how we see it in the console)
+    # Explicitly set the subject to our App's GraphQL Schema and excute it as json (mock exactly what the server logs)
     subject(:result) do
       DujotaStudiosSchema.execute(query).as_json
     end
 
     it "retuns a list of all posts" do
-      expect(result.dig).to match_array(
-        posts.map { |post| { "title": post.title, "body": post.body, "imageUrl": post.imageUrl } }
+      expect(result.dig("data", "posts")).to match_array(
+        posts.map { |post| { "title" => post.title, "body" => post.body, "imageUrl" => post.image_url } }
       )
     end
   end
