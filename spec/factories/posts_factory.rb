@@ -2,7 +2,7 @@ require "faker"
 
 FactoryBot.define do
   factory :post do
-    title { Faker::Hipster.words }
+    sequence(:title) { |n| "Post - #{n}" }
     body { Faker::Hipster.sentence }
     image_url "/root_url/some_file_name.jpg"
     user
