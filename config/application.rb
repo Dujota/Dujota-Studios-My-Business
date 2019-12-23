@@ -32,6 +32,11 @@ module DujotaStudios
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    # Generator Configurations
+    config.generators do |g|
+      g.factory_bot suffix: "factory"
+    end
+
     # Require belongs_to by default
     config.active_record.belongs_to_required_by_default = true
 
