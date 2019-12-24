@@ -18,7 +18,9 @@ RSpec.describe Types::QueryType do
     end
 
     # Explicitly set the subject to our App's GraphQL Schema and excute it as json (mock exactly what the server logs)
+
     subject(:result) do
+      # similar line in the GraphqlController#execute
       DujotaStudiosSchema.execute(query).as_json
     end
 
