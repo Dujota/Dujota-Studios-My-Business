@@ -32,3 +32,6 @@ yarn-debug.log*
 
 # Ignore any RSpec output files
 /spec/examples.txt
+
+# Ignore .env config file
+.env

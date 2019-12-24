@@ -47,11 +47,17 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise - Authentication
 gem 'devise', '~> 4.7', '>= 4.7.1'
-gem "graphql", "~> 1.9"
+gem 'devise-jwt', '~> 0.5.9'
 
+# GraphQL
+gem "graphql", "~> 1.9"
 gem 'graphiql-rails', group: :development
+
+
 gem "rspec-rails", "= 3.9.0", :groups => [:development, :test]
 
 gem "factory_bot_rails", "~> 5.1", :groups => [:development, :test]
 
 gem "faker", "~> 2.9", :groups => [:development, :test]
+
+gem "dotenv-rails", "~> 2.7", :groups => [:development, :test]
