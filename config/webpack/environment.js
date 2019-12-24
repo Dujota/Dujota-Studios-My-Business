@@ -1,3 +1,10 @@
-const { environment } = require('@rails/webpacker')
+const { environment } = require('@rails/webpacker');
 
-module.exports = environment
+// make Webpack “understand” .gql
+environment.loaders.append('graphql', {
+  test: /\.()$/,
+  exclude: /node_modules/,
+  loader: 'graphql-tag/loader',
+});
+
+module.exports = environment;
