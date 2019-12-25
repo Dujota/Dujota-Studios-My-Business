@@ -8,6 +8,7 @@ module Mutations
     field :user, Types::UserType, null: true
 
     def resolve(email:, password:)
+      # user = User.find_for_database_authentication()
     end
   end
 end
