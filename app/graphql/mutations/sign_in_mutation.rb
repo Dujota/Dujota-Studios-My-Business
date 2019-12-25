@@ -16,7 +16,7 @@ module Mutations
         if user.valid_password?(password: password)
           context[:current_user] = user
 
-          # TODO:: change this
+          # TODO:: change this?
           return user
         else
           GraphQL::ExecutionError.new("Incorrect Email/Password")
