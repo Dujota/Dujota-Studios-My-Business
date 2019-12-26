@@ -2,15 +2,13 @@ require "rails_helper"
 
 RSpec.describe Types::MutationType do
   describe "sign in" do
-
-    # Setup the GQL mutation variables
-    variables = {
-      "email" => "testUser@example.com",
-      "password" => "123456",
-    }
-
-    # Create and save one user.
-    user = create(:user, **variables.symbolize_keys)
+    before(:each) do
+      # Setup the GQL mutation variables
+      variables = {
+        "email" => "testUser@example.com",
+        "password" => "123456",
+      }
+    end
 
     let(:mutation) do
       %(
@@ -33,6 +31,9 @@ RSpec.describe Types::MutationType do
 
     subject(:result) do
       DujotaStudiosSchema.execute(mutation).as_json
+    end
+
+    it "signs a user in" do
     end
   end
 end
