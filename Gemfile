@@ -61,3 +61,5 @@ gem "factory_bot_rails", "~> 5.1", :groups => [:development, :test]
 gem "faker", "~> 2.9", :groups => [:development, :test]
 
 gem "dotenv-rails", "~> 2.7", :groups => [:development, :test]
+
+gem "pry", '~> 0.12.2', :groups => [:development, :test]

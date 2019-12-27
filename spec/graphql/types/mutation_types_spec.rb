@@ -4,9 +4,10 @@ RSpec.describe Types::MutationType do
   describe "sign in" do
     before(:each) do
       # Setup the GQL mutation variables
-      variables = {
+      @variables = {
         "email" => "testUser@example.com",
         "password" => "123456",
+        "password_confirmation" => "123456",
       }
     end
 
@@ -34,6 +35,10 @@ RSpec.describe Types::MutationType do
     end
 
     it "signs a user in" do
+      # Create and save one user.
+      user = create(:user, **@variables.symbolize_keys)
+
+      binding.pry
     end
   end
 end
