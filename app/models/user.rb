@@ -5,9 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: JwtBlacklist
 
+  #   Associations
   has_many :posts, dependent: :destroy
   has_one :profile, autosave: true
 
+  # Profile
   delegate :first_name, :first_name=,
            :last_name, :last_name=,
            :full_name, :full_name=,
